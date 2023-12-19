@@ -276,9 +276,9 @@ void CodeMenu()
 	//main page
 	vector<Line*> MainLines;
 #if DOLPHIN_BUILD
-	MainLines.push_back(new Comment("Warp Zone Netplay Code Menu", &MENU_TITLE_CHECK_LOCATION));
+	MainLines.push_back(new Comment("SATXPM Netplay Code Menu", &MENU_TITLE_CHECK_LOCATION));
 #else
-	MainLines.push_back(new Comment("Warp Zone Code Menu", &MENU_TITLE_CHECK_LOCATION));
+	MainLines.push_back(new Comment("SATXPM Code Menu", &MENU_TITLE_CHECK_LOCATION));
 #endif
 
 	MainLines.push_back(new Comment("X = Reset Selection | Y = Reset Page"));
@@ -291,9 +291,9 @@ void CodeMenu()
 	
 	MainLines.push_back(&DebugMode.CalledFromLine);
 #if DOLPHIN_BUILD
-	MainLines.push_back(new Selection("Stagelist", { "2023 Singles", "2023 Doubles", "Middle 3" }, 0, STAGELIST_INDEX));
+	MainLines.push_back(new Selection("Stagelist", { "SA Singles", "SA Doubles", "Proposed Stagelist", "PMBR" }, 0, STAGELIST_INDEX));
 #else
-	MainLines.push_back(new Selection("Stagelist", { "2023 Singles", "2023 Doubles", "Middle 3" }, 0, STAGELIST_INDEX));
+	MainLines.push_back(new Selection("Stagelist", { "SA Singles", "SA Doubles", "Proposed Stagelist", "PMBR" }, 0, STAGELIST_INDEX));
 #endif
 	constantOverrides.emplace_back(0x80523400, STAGELIST_INDEX);
 	//	MainLines.push_back(new Selection("Endless Friendlies", { "OFF", "Same Stage", "Random Stage", "Round Robin" }, 0, INFINITE_FRIENDLIES_INDEX));
@@ -308,7 +308,7 @@ void CodeMenu()
 #if DOLPHIN_BUILD
 	MainLines.push_back(new Toggle("Autosave Replays", true, AUTO_SAVE_REPLAY_INDEX));
 #else
-	MainLines.push_back(new Toggle("Autosave Replays", true, AUTO_SAVE_REPLAY_INDEX));
+	MainLines.push_back(new Toggle("Autosave Replays", false, AUTO_SAVE_REPLAY_INDEX));
 #endif
 	//MainLines.push_back(new Toggle("Save Previous Replay", false, SAVE_REPLAY_ANYWHERE_INDEX));
 	MainLines.push_back(new Selection("Save Previous Replay", { "OFF", "Save On Exit" }, 0, SAVE_REPLAY_ANYWHERE_INDEX));
