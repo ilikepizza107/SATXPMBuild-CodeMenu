@@ -999,7 +999,7 @@ void ControlCodeMenu()
 	//Prevents Code Menu from booting if it doesn't match a specified string (lol)
 #if BUILD_TYPE == PROJECT_PLUS
 	LoadHalfToReg(Reg1, MENU_TITLE_CHECK_LOCATION + 7 + Line::COMMENT_LINE_TEXT_START);
-	If(Reg1, NOT_EQUAL_I_L, 0x6e65); //ne
+	If(Reg1, NOT_EQUAL_I_L, 0x436f); //ne
 	{
 		JumpToLabel(NotLoaded);
 	}EndIf();
